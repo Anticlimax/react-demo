@@ -29,10 +29,9 @@ h1 {
 ol {
   display: flex;
   width: 100%;
-  height: 60%;
+  height: 70%;
   flex-direction: column;
   align-items: center;
-  box-shadow: 2px 5px 1px 1px rgba(0, 0, 0, .2);
   overflow: scroll;
 }
 
@@ -40,6 +39,8 @@ ol > li {
   padding: .5rem;
   width: 100%;
   text-align: center;
+  box-shadow: 2px 5px 1px 1px rgba(0, 0, 0, .2);
+
 }
 
 
