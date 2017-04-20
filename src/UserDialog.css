@@ -1,4 +1,4 @@
-UserDialog-Wrapper {
+.UserDialog-Wrapper {
   position: fixed;
   top:0;
   left:0;
@@ -10,35 +10,44 @@ UserDialog-Wrapper {
 }
 
 .UserDialog {
-  border-radius: 4px;
-  min-width: 20em;
   background: white;
-  border: 1px solid #aaa;
-  box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
+  padding: 2rem;
+  border-radius: 5px;
 }
 
-.UserDialog > nav:first-child {
-  padding: 1em;
-  margin-left: -2em;
-}
-.UserDialog > nav:first-child label {
-  margin-left: 2em;
-  cursor: pointer;
-}
-
-.UserDialog > .panel {
-  padding: 0 1em 1em ;
-}
-
-.UserDialog form > .row {
+.UserDialog nav {
   display: flex;
-  padding: .3em 0;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
 }
 
-.UserDialog form > .row > label:first-child {
-  width: 4em;
-}
 
-.UserDialog form > .row .actions {
-  padding-left: 4em;
+.UserDialog .row {
+  padding: 1rem;
+}
+.UserDialog .row label {
+  margin-right: 2rem;
+}
+.UserDialog .row:first-child label {
+  margin-right: 1rem;
+}
+.UserDialog .row input {
+  border-radius: 4px;
+  outline: none;
+  background: #eeeeee;
+}
+.actions {
+  text-align: center;
+}
+.actions button {
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  background: #5dba5d;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+.actions button:hover {
+  box-shadow: 1px 1px 1px  #5dba5d;
 }

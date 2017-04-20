@@ -7,14 +7,7 @@
   width: 20px;
   height: 20px;
 }
-.TodoItem button {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background: linear-gradient(to bottom, #FF9966,#FF6666);
-  outline: none;
-}
+
 .completed {
   color: lightgray;
   text-decoration: line-through black;

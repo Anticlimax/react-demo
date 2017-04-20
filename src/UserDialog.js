@@ -38,7 +38,11 @@ export default class UserDialog extends Component {
         this.props.onSignUp.call(null, user)
       }
       let error = (error) => {
-        alert(messageMap[error.code])
+        if(messageMap[error.code]){
+          alert(messageMap[error.code])
+        } else {
+          alert(messageMap.other)
+        }
       }
       signUp(username, password, success, error)
     }
@@ -50,7 +54,11 @@ export default class UserDialog extends Component {
         this.props.onSignIn.call(null, user)
       }
       let error = (user) =>{
-        alert(messageMap[error.code])
+        if(messageMap[error.code]){
+          alert(messageMap[error.code])
+        } else {
+          alert(messageMap.other)
+        }
       }
       signIn(username,password,success,error)
     }

@@ -50,5 +50,15 @@ export function signIn(username, password, successFn, errorFn) {
   },(error)=>{
     errorFn.call(null,error)
   })
+}
 
+export function initData() {
+  if (AV.User.current()) {
+    const query = new AV.Query('AllTodos')
+    query.find().then((todos) => {
+      return todos[0]
+    }, (error) => {
+      console.log(error)
+    })
+  }
 }

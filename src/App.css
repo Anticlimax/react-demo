@@ -1,10 +1,11 @@
-.App {
-
+.mainPage {
+  height: 95%;
 }
 
 h1 {
   padding: 1rem;
 
+  font-size: 2rem;
   font-weight: normal;
   background-color: #FFCC99;
   box-shadow: 2px 5px 1px 1px rgba(0, 0, 0, .2)
@@ -28,9 +29,11 @@ h1 {
 ol {
   display: flex;
   width: 100%;
+  height: 60%;
   flex-direction: column;
   align-items: center;
-  box-shadow: 2px 5px 1px 1px rgba(0, 0, 0, .2)
+  box-shadow: 2px 5px 1px 1px rgba(0, 0, 0, .2);
+  overflow: scroll;
 }
 
 ol > li {
@@ -50,4 +53,19 @@ ol>li:nth-child(even){
 
 ol > li:hover {
   background-color: #ddd;
+}
+.mainPage button {
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  background: #de514c;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+.mainPage button:hover {
+  box-shadow: 1px 1px 1px  #de514c;
+
+}
+.mainPage h1 > button{
+  margin-left: 35rem ;
 }
