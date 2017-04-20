@@ -59,20 +59,21 @@ class App extends Component {
 
   componentWillMount() {
 
-    if (AV.User.current()) {
-      const query = new AV.Query('AllTodos')
-      query.find().then((todos) => {
-
-        const stateCopy = copyState(this.state)
-        stateCopy.todoList = JSON.parse(todos[0].attributes.AllTodos)
-        stateCopy.todoList.id = todos[0].id
-        this.setState(stateCopy)
-        console.log(this.state.todoList)
-
-      }, (error) => {
-        console.log(error)
-      })
-    }
+    // if (AV.User.current()) {
+    //   const query = new AV.Query('AllTodos')
+    //   query.find().then((todos) => {
+    //
+    //     const stateCopy = copyState(this.state)
+    //     stateCopy.todoList = JSON.parse(todos[0].attributes.AllTodos)
+    //     stateCopy.todoList.id = todos[0].id
+    //     this.setState(stateCopy)
+    //     console.log(this.state.todoList)
+    //
+    //   }, (error) => {
+    //     console.log(error)
+    //   })
+    // }
+    this.fetchData()
   }
 
   componentDidUpdate() {
@@ -117,6 +118,7 @@ class App extends Component {
   }
 
   onSignUpOrSignIn = (user) => {
+    this.fetchData()
     let stateCopy = copyState(this.state)
     stateCopy.user = user
     this.setState(stateCopy)
@@ -166,6 +168,22 @@ class App extends Component {
     } else {
       console.log(1)
       this.saveData()
+    }
+  }
+  fetchData=()=>{
+    if (AV.User.current()) {
+      const query = new AV.Query('AllTodos')
+      query.find().then((todos) => {
+
+        const stateCopy = copyState(this.state)
+        stateCopy.todoList = JSON.parse(todos[0].attributes.AllTodos)
+        stateCopy.todoList.id = todos[0].id
+        this.setState(stateCopy)
+        console.log(this.state.todoList)
+
+      }, (error) => {
+        console.log(error)
+      })
     }
   }
 
