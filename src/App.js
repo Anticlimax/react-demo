@@ -4,19 +4,6 @@ import TodoInput from './TodoInput';
 import TodoItem from './TodoItem'
 import './App.css';
 import * as localStore from './localStore'
-import AV from 'leancloud-storage'
-
-const appId = '404OB1m4hOXOScV8P56mJfEg-gzGzoHsz'
-const appKey = 'gxModxAyOwTK2JEoySRvV3iX'
-AV.init({ appId, appKey })
-
-const TestObject = AV.Object.extend('TestObject')
-const testObject = new TestObject()
-testObject.save({
-  word:'hello world'
-}).then((object)=>{
-  alert('works')
-})
 
 
 class App extends Component {
