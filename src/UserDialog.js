@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import { signUp, signIn } from './leanCloud'
 import './UserDialog.css'
 import copyState from './copyState'
+import messageMap from './errorMessage'
 
 
 
@@ -37,7 +38,7 @@ export default class UserDialog extends Component {
         this.props.onSignUp.call(null, user)
       }
       let error = (error) => {
-        alert(error)
+        alert(messageMap[error.code])
       }
       signUp(username, password, success, error)
     }
@@ -49,7 +50,7 @@ export default class UserDialog extends Component {
         this.props.onSignIn.call(null, user)
       }
       let error = (user) =>{
-        alert(error)
+        alert(messageMap[error.code])
       }
       signIn(username,password,success,error)
     }
